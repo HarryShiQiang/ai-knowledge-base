@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-dify",
+  "title": "langgenius/dify",
+  "source_url": "https://github.com/langgenius/dify",
+  "source_type": "github_trending",
+  "summary": "Production-ready agentic workflow platform with visual orchestration, RAG, MCP protocol support, and multi-model integration. 144,999 stars and 22,818 forks, the most popular open-source agent orchestration platform.",
+  "tags": ["agent", "llm", "rag", "orchestration", "open-source", "deployment"],
+  "chinese_summary": "生产级 Agent 工作流平台，可视化编排、RAG 和 MCP 协议原生支持，144,999 星+22,818 fork，是 Agent 编排领域最流行的开源平台。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

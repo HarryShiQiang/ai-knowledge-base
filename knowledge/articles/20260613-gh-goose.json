@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-goose",
+  "title": "aaif-goose/goose",
+  "source_url": "https://github.com/aaif-goose/goose",
+  "source_type": "github_trending",
+  "summary": "A general-purpose open-source AI agent that goes beyond code suggestions, supporting install, execute, edit, and test operations with any LLM. Offers native desktop app (macOS/Linux/Windows), full CLI, and API. Connects to 15+ LLM providers and 70+ extensions via MCP. Built in Rust for performance. Recently transitioned from block/goose to the Linux Foundation's Agentic AI Foundation. 49.1k stars, Apache 2.0, 4,697 commits.",
+  "tags": ["agent", "open-source", "llm", "autonomous-agent", "function-calling", "tool-use"],
+  "chinese_summary": "通用开源 AI Agent，超越代码建议，支持安装、执行、编辑和测试操作，兼容任意 LLM。提供原生桌面应用（macOS/Linux/Windows）、完整 CLI 和 API。通过 MCP 协议连接 15+ LLM 提供商和 70+ 扩展。Rust 构建，性能优越。最近从 block/goose 迁移至 Linux 基金会旗下的 Agentic AI Foundation。4.91 万星，Apache 2.0 协议，4697 次提交。",
+  "difficulty": "advanced",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

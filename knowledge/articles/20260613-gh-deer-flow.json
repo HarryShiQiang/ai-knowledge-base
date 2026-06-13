@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-deer-flow",
+  "title": "bytedance/deer-flow",
+  "source_url": "https://github.com/bytedance/deer-flow",
+  "source_type": "github_trending",
+  "summary": "ByteDance's open-source long-horizon SuperAgent harness that researches, codes, and creates. Uses sandbox, memory, tools, skills, subagents and message gateway to handle tasks from minutes to hours. 71,058 stars, MIT license.",
+  "tags": ["agent", "multi-agent", "llm", "open-source", "deep-research", "autonomous-agent"],
+  "chinese_summary": "字节跳动开源的长时程 SuperAgent 框架，六层架构（沙箱/记忆/工具/技能/子Agent/消息网关）处理分钟到小时级任务，71,058 星，MIT 协议。",
+  "difficulty": "advanced",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 9.0
+}

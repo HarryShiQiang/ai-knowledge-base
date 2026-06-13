@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-taste-skill",
+  "title": "Leonxlnx/taste-skill",
+  "source_url": "https://github.com/Leonxlnx/taste-skill",
+  "source_type": "github_trending",
+  "summary": "A prompt engineering skill that injects aesthetic judgment into AI outputs, preventing the generation of boring, generic, or low-quality content. Implemented as a Shell-based skill compatible with multiple agent frameworks. 42.4k stars with 8,651 stars gained this week.",
+  "tags": ["prompt-engineering", "agent"],
+  "chinese_summary": "一款为 AI 输出注入审美判断的提示工程 Skill，防止 AI 生成无聊、通用或低质量的内容。以 Shell 脚本形式实现，兼容多种 Agent 框架。4.24 万星，本周新增 8651 星。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 6.0
+}

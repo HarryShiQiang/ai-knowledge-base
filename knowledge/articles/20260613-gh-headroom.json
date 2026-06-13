@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-headroom",
+  "title": "chopratejas/headroom",
+  "source_url": "https://github.com/chopratejas/headroom",
+  "source_type": "github_trending",
+  "summary": "A local-first context compression layer for AI agents that reduces token usage by 60-95% while preserving answer quality. Features six compression algorithms: SmartCrusher (JSON), CodeCompressor (AST), and Kompress-base (fine-tuned HuggingFace model). Supports library, proxy, MCP server, agent wrap modes. Includes reversible compression (CCR), CacheAligner for KV cache optimization, cross-agent shared memory, and headroom learn for failure mining. Benchmarked: 92% savings on code search, accuracy preserved on GSM8K and TruthfulQA. Python+Rust, 24.7k stars.",
+  "tags": ["llm", "token-optimization", "open-source", "deployment", "rag"],
+  "chinese_summary": "面向 AI Agent 的本地优先上下文压缩层，可将 Token 使用量减少 60-95% 同时保持回答质量。内置 6 种压缩算法：SmartCrusher（JSON 压缩）、CodeCompressor（AST 感知）和 Kompress-base（基于 HuggingFace 微调模型）。支持库、代理、MCP 服务器和 Agent 包装四种模式。包含可逆压缩（CCR）、KV 缓存对齐器（CacheAligner）、跨 Agent 共享内存和失败学习（headroom learn）。基准测试：代码搜索节省 92%，GSM8K 和 TruthfulQA 准确率无损。",
+  "difficulty": "advanced",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 9.0
+}

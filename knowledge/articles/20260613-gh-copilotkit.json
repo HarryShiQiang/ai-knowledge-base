@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-copilotkit",
+  "title": "CopilotKit/CopilotKit",
+  "source_url": "https://github.com/CopilotKit/CopilotKit",
+  "source_type": "github_trending",
+  "summary": "A frontend framework stack for building AI Agents and Generative UI, supporting React, Angular, Mobile, and Slack integrations. Creators of the AG-UI Protocol, an open standard for agent-generated user interfaces. 34.9k stars, TypeScript-based, gained 2,473 stars this week.",
+  "tags": ["agent", "chatbot", "open-source", "code-generation"],
+  "chinese_summary": "面向 AI Agent 和生成式 UI 的前端框架栈，支持 React、Angular、Mobile、Slack 等平台集成。AG-UI 协议（Agent-Generated UI）的创建者，定义了 Agent 生成用户界面的开放标准。3.49 万星，TypeScript 实现，本周新增 2473 星。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.5
+}

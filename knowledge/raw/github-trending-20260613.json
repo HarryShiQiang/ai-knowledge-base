@@ -1,0 +1,72 @@
+[
+  {
+    "title": "mvanhorn/last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "source": "github_trending",
+    "popularity": 12257,
+    "summary": "AI Agent 技能工具，可跨 Reddit、X、YouTube、HN、Polymarket 等多平台搜索话题，自动生成有据可依的综合摘要。"
+  },
+  {
+    "title": "chopratejas/headroom",
+    "url": "https://github.com/chopratejas/headroom",
+    "source": "github_trending",
+    "popularity": 10184,
+    "summary": "LLM 上下文压缩工具，可将工具输出、日志、文件和 RAG 分片压缩 60-95% 的 Token 量，同时保持回答质量。支持库、代理和 MCP 服务器三种模式。"
+  },
+  {
+    "title": "Leonxlnx/taste-skill",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "source": "github_trending",
+    "popularity": 8651,
+    "summary": "为 AI 提供「品味」的 Skill，防止 AI 生成无聊、通用、质量低下的内容，提升输出质量与创意性。"
+  },
+  {
+    "title": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "source": "github_trending",
+    "popularity": 5364,
+    "summary": "让 AI Agent 浏览整个互联网的工具，一条命令即可搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等平台，无需 API 费用。"
+  },
+  {
+    "title": "phuryn/pm-skills",
+    "url": "https://github.com/phuryn/pm-skills",
+    "source": "github_trending",
+    "popularity": 4839,
+    "summary": "PM 技能市场，提供 100+ Agent 技能、命令和插件，覆盖从产品发现到战略、执行、发布和增长的全流程。"
+  },
+  {
+    "title": "santifer/career-ops",
+    "url": "https://github.com/santifer/career-ops",
+    "source": "github_trending",
+    "popularity": 4319,
+    "summary": "基于 Claude Code 的 AI 求职系统，包含 14 种技能模式、Go 语言仪表盘、PDF 生成和批量处理功能。"
+  },
+  {
+    "title": "lfnovo/open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "source": "github_trending",
+    "popularity": 3848,
+    "summary": "Notebook LM 的开源实现，提供更灵活的配置和更丰富的功能，支持多种 LLM 后端。"
+  },
+  {
+    "title": "aaif-goose/goose",
+    "url": "https://github.com/aaif-goose/goose",
+    "source": "github_trending",
+    "popularity": 2479,
+    "summary": "开源可扩展的 AI Agent，不仅能生成代码建议，还能安装、执行、编辑和测试代码，支持任意 LLM 后端。"
+  },
+  {
+    "title": "CopilotKit/CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "source": "github_trending",
+    "popularity": 2473,
+    "summary": "面向 Agent 和生成式 UI 的前端框架，支持 React、Angular、Mobile、Slack 等平台，也是 AG-UI 协议的创建者。"
+  },
+  {
+    "title": "openai/plugins",
+    "url": "https://github.com/openai/plugins",
+    "source": "github_trending",
+    "popularity": 1435,
+    "summary": "OpenAI 官方插件集合，提供 ChatGPT 的插件开发参考实现和示例。"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "id": "20260613-gh-khoj",
+  "title": "khoj-ai/khoj",
+  "source_url": "https://github.com/khoj-ai/khoj",
+  "source_type": "github_trending",
+  "summary": "Self-hosted AI second brain supporting document search, custom agents, scheduled automations, and deep research. Turns any online or local LLM (GPT, Claude, Gemini, Llama, Qwen, Mistral) into a personal autonomous AI. 35,095 stars, AGPL-3.0.",
+  "tags": ["agent", "llm", "rag", "open-source", "search", "document-processing"],
+  "chinese_summary": "自托管 AI 第二大脑，支持文档搜索、自定义 Agent、定时自动化和深度研究，可将任意 LLM 转为个人 AI 助手，35,095 星。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T12:00:00Z",
+  "fetched_at": "2026-06-13T12:00:00Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}
