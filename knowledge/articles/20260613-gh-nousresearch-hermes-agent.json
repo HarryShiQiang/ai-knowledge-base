@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-nousresearch-hermes-agent",
+  "title": "NousResearch/hermes-agent",
+  "source_url": "https://github.com/NousResearch/hermes-agent",
+  "source_type": "github_trending",
+  "summary": "A modular, extensible AI agent framework designed to evolve with user needs, supporting tool-use and multi-agent orchestration.",
+  "tags": [
+    "agent",
+    "agentic-framework",
+    "multi-agent",
+    "tool-use",
+    "open-source"
+  ],
+  "chinese_summary": "一个模块化、可扩展的AI智能体框架，旨在随用户需求进化，支持工具使用和多智能体编排。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T04:00:45Z",
+  "fetched_at": "2026-06-13T04:00:45Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}

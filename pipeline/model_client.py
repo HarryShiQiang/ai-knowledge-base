@@ -229,16 +229,31 @@ class OpenAICompatibleProvider(LLMProvider):
 # ---------------------------------------------------------------------------
 
 
-def _get_provider() -> OpenAICompatibleProvider:
-    """根据环境变量构造对应的提供商实例。
+def create_provider(
+    provider_name: str | None = None,
+    api_key: str | None = None,
+    model: str | None = None,
+    base_url: str | None = None,
+) -> OpenAICompatibleProvider:
+    """创建 LLM 提供商实例。
+
+    未传入的参数将从环境变量读取。支持传入自定义配置以覆盖默认值。
+
+    Args:
+        provider_name: 提供商名称 (deepseek / qwen / openai)。
+            默认从 LLM_PROVIDER 环境变量读取。
+        api_key: API 密钥。默认从 {PROVIDER}_API_KEY 环境变量读取。
+        model: 模型名称。默认从 LLM_MODEL 环境变量读取，或使用提供商默认模型。
+        base_url: API 基础地址。默认使用提供商的默认地址。
 
     Returns:
         配置好的 OpenAICompatibleProvider 实例。
 
     Raises:
-        ValueError: 未找到对应的 API Key 或提供商不支持。
+        ValueError: 未找到 API Key 或提供商不支持。
     """
-    provider_name = os.getenv("LLM_PROVIDER", DEFAULT_PROVIDER).strip().lower()
+    if provider_name is None:
+        provider_name = os.getenv("LLM_PROVIDER", DEFAULT_PROVIDER).strip().lower()
 
     if provider_name not in _PROVIDER_CONFIGS:
         valid = ", ".join(_PROVIDER_CONFIGS)
@@ -248,21 +263,35 @@ def _get_provider() -> OpenAICompatibleProvider:
 
     config = _PROVIDER_CONFIGS[provider_name]
 
-    env_key = f"{provider_name.upper()}_API_KEY"
-    api_key = os.getenv(env_key, "")
+    if api_key is None:
+        env_key = f"{provider_name.upper()}_API_KEY"
+        api_key = os.getenv(env_key, "")
     if not api_key:
         raise ValueError(
-            f"环境变量 {env_key} 未设置，请配置后重试"
+            f"API Key 未设置，请设置环境变量 {provider_name.upper()}_API_KEY"
         )
 
-    model = os.getenv("LLM_MODEL", config["default_model"])
+    if model is None:
+        model = os.getenv("LLM_MODEL", config["default_model"])
+
+    if base_url is None:
+        base_url = config["base_url"]
 
     return OpenAICompatibleProvider(
-        base_url=config["base_url"],
+        base_url=base_url,
         api_key=api_key,
         model=model,
         provider_name=provider_name,
     )
+
+
+def _get_provider() -> OpenAICompatibleProvider:
+    """根据环境变量构造对应的提供商实例 (内部使用)。
+
+    Returns:
+        配置好的 OpenAICompatibleProvider 实例。
+    """
+    return create_provider()
 
 
 async def chat_with_retry(

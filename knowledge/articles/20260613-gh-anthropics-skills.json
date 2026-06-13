@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-anthropics-skills",
+  "title": "anthropics/skills",
+  "source_url": "https://github.com/anthropics/skills",
+  "source_type": "github_trending",
+  "summary": "Anthropic's public repository for Agent Skills, providing reusable components and tools for building AI agents.",
+  "tags": [
+    "agent",
+    "agentic-framework",
+    "open-source",
+    "tool-use"
+  ],
+  "chinese_summary": "Anthropic的Agent Skills公共仓库，提供可复用的组件和工具，用于构建AI代理。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T04:04:42Z",
+  "fetched_at": "2026-06-13T04:04:42Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}

@@ -57,22 +57,22 @@ sources:
   # 公司博客 / Company Blogs
   # ------------------------------------------------------------------
   - name: "OpenAI Blog"
-    url: "https://openai.com/blog/rss.xml"
+    url: "https://openai.com/news/rss.xml"
     category: "company_blog"
     enabled: true
-    notes: "OpenAI official blog RSS"
+    notes: "OpenAI official blog RSS (redirected from /blog/rss.xml)"
 
   - name: "Anthropic Research"
-    url: "https://www.anthropic.com/feed"
+    url: "https://www.anthropic.com/research/feed"
     category: "company_blog"
-    enabled: true
-    notes: "Anthropic research blog Atom feed"
+    enabled: false
+    notes: "Anthropic research blog; no RSS feed available, disabled"
 
   - name: "Google DeepMind Blog"
-    url: "https://blog.google/technology/ai/rss/"
+    url: "https://blog.google/innovation-and-ai/technology/ai/rss/"
     category: "company_blog"
     enabled: true
-    notes: "Google AI/DeepMind blog RSS"
+    notes: "Google AI/DeepMind blog RSS (redirected URL)"
 
   - name: "Hugging Face Blog"
     url: "https://huggingface.co/blog/feed.xml"
@@ -83,14 +83,14 @@ sources:
   - name: "Meta AI Blog"
     url: "https://ai.meta.com/blog/feed/"
     category: "company_blog"
-    enabled: true
-    notes: "Meta AI research blog RSS"
+    enabled: false
+    notes: "Meta AI research blog RSS; 404, no valid feed URL found"
 
   - name: "Mistral AI Blog"
     url: "https://mistral.ai/news/rss/"
     category: "company_blog"
-    enabled: true
-    notes: "Mistral AI news feed"
+    enabled: false
+    notes: "Mistral AI news feed; 404, no valid feed URL found"
 
   # ------------------------------------------------------------------
   # 中文社区 / Chinese Community

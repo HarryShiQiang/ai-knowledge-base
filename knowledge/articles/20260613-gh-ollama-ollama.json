@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-ollama-ollama",
+  "title": "ollama/ollama",
+  "source_url": "https://github.com/ollama/ollama",
+  "source_type": "github_trending",
+  "summary": "Ollama enables local execution of large language models like Kimi, DeepSeek, Qwen, and Gemma with a simple interface.",
+  "tags": [
+    "llm",
+    "open-source",
+    "deployment",
+    "chatbot"
+  ],
+  "chinese_summary": "Ollama 支持本地运行多种大语言模型，如 Kimi、DeepSeek、Qwen 和 Gemma，提供简洁易用的界面。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T04:00:45Z",
+  "fetched_at": "2026-06-13T04:00:45Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}
