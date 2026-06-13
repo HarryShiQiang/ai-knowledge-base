@@ -31,7 +31,7 @@ VALID_STATUSES = frozenset({"draft", "review", "published", "archived"})
 VALID_AUDIENCES = frozenset({"beginner", "intermediate", "advanced"})
 
 ID_PATTERN = re.compile(
-    r"^[a-z][a-z0-9-]*-\d{8}-\d{3}$"
+    r"^\d{8}-[a-z]{2,3}-[a-z0-9][a-z0-9-]*$"
 )
 
 URL_PATTERN = re.compile(r"^https?://\S+$")
@@ -104,7 +104,7 @@ def _validate_required_fields(data: dict[str, Any], filepath: Path) -> list[str]
 
 
 def _validate_id(value: str, filepath: Path) -> list[str]:
-    """Validate ID format: {source}-{YYYYMMDD}-{NNN}."""
+    """Validate ID format: {YYYYMMDD}-{source}-{slug}."""
     errors: list[str] = []
     if not isinstance(value, str):
         return errors
@@ -112,12 +112,11 @@ def _validate_id(value: str, filepath: Path) -> list[str]:
     if not ID_PATTERN.match(value):
         errors.append(
             f"Invalid ID format {value!r}: expected pattern "
-            f"<source>-<YYYYMMDD>-<NNN> (e.g. github-20260317-001)"
+            f"<YYYYMMDD>-<source>-<slug> (e.g. 20260613-gh-llama3-vision)"
         )
         return errors
 
-    parts = value.rsplit("-", 2)
-    date_str = parts[1]
+    date_str = value[:8]
     try:
         year = int(date_str[:4])
         month = int(date_str[4:6])
