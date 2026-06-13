@@ -569,7 +569,16 @@ async def _analyze(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
         logger.warning("No items to analyze")
         return []
 
-    provider = create_provider()
+    try:
+        provider = create_provider()
+    except ValueError as exc:
+        logger.error("Failed to create LLM provider: %s", exc)
+        logger.error(
+            "Please ensure the following environment variables are set: "
+            "LLM_PROVIDER, DEEPSEEK_API_KEY / QWEN_API_KEY / OPENAI_API_KEY"
+        )
+        return []
+
     semaphore = asyncio.Semaphore(_LLM_CONCURRENCY)
 
     tasks = [_analyze_item(item, provider, semaphore) for item in items]
