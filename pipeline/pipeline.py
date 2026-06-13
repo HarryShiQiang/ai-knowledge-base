@@ -450,6 +450,69 @@ def _save_raw(items: list[dict[str, Any]], source: str) -> Path | None:
     return filepath
 
 
+def _save_analyzed(articles: list[dict[str, Any]], dry_run: bool = False) -> Path | None:
+    """Save intermediate analyzed articles for later Step 3-4 processing.
+
+    Used when running --step 1 --step 2 only.
+
+    Args:
+        articles: Analyzed article dicts.
+        dry_run: Dry-run mode, skip actual write.
+
+    Returns:
+        Saved file path, or None.
+    """
+    if dry_run:
+        logger.info("[DRY-RUN] Would save analyzed intermediate data")
+        return None
+
+    try:
+        _KNOWLEDGE_RAW.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        logger.warning("Failed to create raw directory for analyzed data")
+        return None
+
+    today = datetime.now(timezone.utc).strftime("%Y%m%d")
+    filepath = _KNOWLEDGE_RAW / f"analyzed-{today}.json"
+
+    payload = {
+        "source": "pipeline_step2",
+        "analyzed_at": _now_iso(),
+        "count": len(articles),
+        "items": articles,
+    }
+    filepath.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info("Analyzed intermediate data saved to %s", filepath)
+    return filepath
+
+
+def _load_analyzed() -> list[dict[str, Any]]:
+    """Load the most recent intermediate analyzed articles for Step 3-4.
+
+    Searches knowledge/raw/analyzed-*.json for the latest file.
+
+    Returns:
+        List of analyzed article dicts, empty if none found.
+    """
+    if not _KNOWLEDGE_RAW.exists():
+        return []
+
+    files = sorted(_KNOWLEDGE_RAW.glob("analyzed-*.json"), reverse=True)
+    if not files:
+        logger.warning("No intermediate analyzed data found in %s", _KNOWLEDGE_RAW)
+        return []
+
+    filepath = files[0]
+    try:
+        data = json.loads(filepath.read_text(encoding="utf-8"))
+        items = data.get("items", [])
+        logger.info("Loaded %d analyzed items from %s", len(items), filepath.name)
+        return items
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Failed to load analyzed data from %s: %s", filepath.name, exc)
+        return []
+
+
 # ===================================================================
 # Step 2: Analyze
 # ===================================================================
@@ -890,6 +953,14 @@ Examples:
         action="store_true",
         help="启用 DEBUG 级别日志",
     )
+    parser.add_argument(
+        "--step",
+        type=int,
+        action="append",
+        choices=[1, 2, 3, 4],
+        dest="steps",
+        help="指定执行的步骤（可多次使用）。例如: --step 1 --step 2。未指定则执行全部 4 步。",
+    )
     return parser.parse_args(argv)
 
 
@@ -897,68 +968,97 @@ async def _run_pipeline(
     sources: list[str],
     limit: int,
     dry_run: bool,
+    steps: list[int] | None = None,
 ) -> dict[str, Any]:
-    """执行完整的四步流水线。
+    """执行流水线（支持按步骤分阶段运行）。
 
     Args:
         sources: 来源标识列表。
         limit: 每个来源的最大条目数。
         dry_run: 干跑模式。
+        steps: 要执行的步骤列表。None 或空列表表示执行全部 4 步。
 
     Returns:
         执行统计字典。
     """
+    step_set: set[int] = set(steps) if steps else {1, 2, 3, 4}
+    needs_full = step_set & {3, 4} and not (step_set & {1, 2})
     stats: dict[str, Any] = {
         "started_at": _now_iso(),
         "sources": sources,
         "limit": limit,
         "dry_run": dry_run,
+        "steps": sorted(step_set),
         "collected_count": 0,
         "analyzed_count": 0,
         "organized_count": 0,
         "saved_count": 0,
     }
 
-    # Step 1
-    logger.info("=" * 50)
-    logger.info("Step 1: Collect")
-    logger.info("=" * 50)
-    raw_items = await _collect(sources, limit)
-    stats["collected_count"] = len(raw_items)
+    # ---------------------------------------------------------------
+    # Steps 1-2: Collect & Analyze
+    # ---------------------------------------------------------------
+    if step_set & {1, 2}:
+        logger.info("=" * 50)
+        logger.info("Step 1: Collect")
+        logger.info("=" * 50)
+        raw_items = await _collect(sources, limit)
+        stats["collected_count"] = len(raw_items)
 
-    if not raw_items:
-        logger.warning("No items collected, pipeline stopping.")
+        if not raw_items:
+            logger.warning("No items collected, pipeline stopping.")
+            return stats
+
+        for src in set(item.get("source", "") for item in raw_items):
+            src_items = [it for it in raw_items if it.get("source") == src]
+            if src_items and not dry_run:
+                _save_raw(src_items, src)
+
+        logger.info("=" * 50)
+        logger.info("Step 2: Analyze")
+        logger.info("=" * 50)
+        articles = await _analyze(raw_items)
+        stats["analyzed_count"] = len(articles)
+
+        if not articles:
+            logger.warning("No articles analyzed, pipeline stopping.")
+            return stats
+
+        # If running only steps 1-2 (not 3-4), save intermediate data for later
+        if not (step_set & {3, 4}):
+            _save_analyzed(articles, dry_run=dry_run)
+            stats["finished_at"] = _now_iso()
+            return stats
+
+    elif needs_full:
+        # Running only steps 3-4: load saved analyzed data
+        logger.info("=" * 50)
+        logger.info("Loading intermediate analyzed data for Step 3-4")
+        logger.info("=" * 50)
+        articles = _load_analyzed()
+        stats["analyzed_count"] = len(articles)
+
+        if not articles:
+            logger.warning("No analyzed data found, pipeline stopping.")
+            return stats
+    else:
         return stats
 
-    for src in set(item.get("source", "") for item in raw_items):
-        src_items = [it for it in raw_items if it.get("source") == src]
-        if src_items and not dry_run:
-            _save_raw(src_items, src)
+    # ---------------------------------------------------------------
+    # Steps 3-4: Organize & Save
+    # ---------------------------------------------------------------
+    if step_set & {3, 4}:
+        logger.info("=" * 50)
+        logger.info("Step 3: Organize")
+        logger.info("=" * 50)
+        final_articles = _organize(articles, dry_run=dry_run)
+        stats["organized_count"] = len(final_articles)
 
-    # Step 2
-    logger.info("=" * 50)
-    logger.info("Step 2: Analyze")
-    logger.info("=" * 50)
-    articles = await _analyze(raw_items)
-    stats["analyzed_count"] = len(articles)
-
-    if not articles:
-        logger.warning("No articles analyzed, pipeline stopping.")
-        return stats
-
-    # Step 3
-    logger.info("=" * 50)
-    logger.info("Step 3: Organize")
-    logger.info("=" * 50)
-    final_articles = _organize(articles, dry_run=dry_run)
-    stats["organized_count"] = len(final_articles)
-
-    # Step 4
-    logger.info("=" * 50)
-    logger.info("Step 4: Save")
-    logger.info("=" * 50)
-    saved = _save_articles(final_articles, dry_run=dry_run)
-    stats["saved_count"] = len(saved)
+        logger.info("=" * 50)
+        logger.info("Step 4: Save")
+        logger.info("=" * 50)
+        saved = _save_articles(final_articles, dry_run=dry_run)
+        stats["saved_count"] = len(saved)
 
     if cost_tracker.total_calls > 0:
         logger.info(cost_tracker.report())
@@ -991,12 +1091,12 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     logger.info(
-        "Pipeline starting: sources=%s, limit=%d, dry_run=%s",
-        sources, args.limit, args.dry_run,
+        "Pipeline starting: sources=%s, limit=%d, dry_run=%s, steps=%s",
+        sources, args.limit, args.dry_run, args.steps,
     )
 
     try:
-        stats = asyncio.run(_run_pipeline(sources, args.limit, args.dry_run))
+        stats = asyncio.run(_run_pipeline(sources, args.limit, args.dry_run, args.steps))
     except Exception:
         logger.exception("Pipeline failed with unhandled exception")
         return 1
