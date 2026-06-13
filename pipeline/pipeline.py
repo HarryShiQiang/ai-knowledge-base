@@ -30,7 +30,7 @@ from typing import Any
 
 import httpx
 
-from model_client import chat_with_retry, create_provider
+from model_client import chat_with_retry, cost_tracker, create_provider
 
 logger = logging.getLogger(__name__)
 
@@ -950,6 +950,9 @@ async def _run_pipeline(
     logger.info("=" * 50)
     saved = _save_articles(final_articles, dry_run=dry_run)
     stats["saved_count"] = len(saved)
+
+    if cost_tracker.total_calls > 0:
+        logger.info(cost_tracker.report())
 
     stats["finished_at"] = _now_iso()
     return stats

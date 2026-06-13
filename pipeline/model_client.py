@@ -58,11 +58,11 @@ _PROVIDER_CONFIGS: dict[str, dict[str, Any]] = {
     },
 }
 
-# 定价表 (USD per 1M tokens, 输入/输出)
-_PRICING: dict[str, dict[str, float]] = {
-    "deepseek": {"input": 0.27, "output": 1.10},
-    "qwen": {"input": 0.55, "output": 2.20},
-    "openai": {"input": 2.50, "output": 10.00},
+# 定价表 (元/百万 tokens, 输入/输出)
+_PRICING_CNY: dict[str, dict[str, float]] = {
+    "deepseek": {"input": 1.0, "output": 2.0},
+    "qwen": {"input": 4.0, "output": 12.0},
+    "openai": {"input": 150.0, "output": 600.0},
 }
 
 
@@ -103,6 +103,140 @@ class LLMResponse:
     model: str = ""
     provider: str = ""
     finish_reason: str = "stop"
+
+
+# ---------------------------------------------------------------------------
+# CostTracker
+# ---------------------------------------------------------------------------
+
+
+class CostTracker:
+    """LLM 调用成本追踪器。
+
+    记录每次 API 调用的 Token 消耗，按提供商统计并计算成本（人民币）。
+
+    Attributes:
+        _records: 原始调用记录列表。
+    """
+
+    _PRICING: dict[str, dict[str, float]] = _PRICING_CNY
+
+    def __init__(self) -> None:
+        """初始化空的成本追踪器。"""
+        self._records: list[dict[str, Any]] = []
+
+    def record(self, usage: Usage, provider: str) -> None:
+        """记录一次 API 调用的 Token 用量。
+
+        Args:
+            usage: Token 用量统计对象。
+            provider: 提供商标识 (deepseek / qwen / openai)。
+        """
+        self._records.append({
+            "provider": provider.strip().lower(),
+            "prompt_tokens": usage.prompt_tokens,
+            "completion_tokens": usage.completion_tokens,
+            "total_tokens": usage.total_tokens,
+        })
+
+    def _cost_for_record(self, record: dict[str, Any]) -> float:
+        """计算单条记录的成本。
+
+        Args:
+            record: 单次调用记录。
+
+        Returns:
+            人民币成本（元）。
+        """
+        provider = record["provider"]
+        if provider not in self._PRICING:
+            return 0.0
+        pricing = self._PRICING[provider]
+        input_cost = (record["prompt_tokens"] / 1_000_000) * pricing["input"]
+        output_cost = (record["completion_tokens"] / 1_000_000) * pricing["output"]
+        return input_cost + output_cost
+
+    def estimated_cost(self, provider: str | None = None) -> float:
+        """返回估算的总成本（元）。
+
+        Args:
+            provider: 提供商标识，为 None 时返回所有提供商合计。
+
+        Returns:
+            人民币成本（元），保留 6 位小数。
+        """
+        filtered = (
+            self._records
+            if provider is None
+            else [r for r in self._records if r["provider"] == provider.strip().lower()]
+        )
+        total = sum(self._cost_for_record(r) for r in filtered)
+        return round(total, 6)
+
+    def report(self, provider: str | None = None) -> str:
+        """生成成本报告。
+
+        Args:
+            provider: 提供商标识，为 None 时报告所有提供商。
+
+        Returns:
+            格式化的成本报告字符串。
+        """
+        providers = (
+            [provider.strip().lower()]
+            if provider
+            else sorted({r["provider"] for r in self._records})
+        )
+
+        lines: list[str] = [
+            "=" * 56,
+            "  LLM Cost Report (CNY / 元)",
+            "=" * 56,
+            f"  {'Provider':<12} {'Calls':>6} {'Prompt':>10} {'Comp':>10} {'Cost':>10}",
+            "  " + "-" * 54,
+        ]
+
+        grand_calls = 0
+        grand_prompt = 0
+        grand_comp = 0
+        grand_cost = 0.0
+
+        for p in providers:
+            recs = [r for r in self._records if r["provider"] == p]
+            if not recs:
+                continue
+            calls = len(recs)
+            prompt_tokens = sum(r["prompt_tokens"] for r in recs)
+            comp_tokens = sum(r["completion_tokens"] for r in recs)
+            cost = self.estimated_cost(p)
+
+            lines.append(
+                f"  {p:<12} {calls:>6} {prompt_tokens:>10,} {comp_tokens:>10,} "
+                f"{cost:>9.4f} ¥"
+            )
+
+            grand_calls += calls
+            grand_prompt += prompt_tokens
+            grand_comp += comp_tokens
+            grand_cost += cost
+
+        lines.append("  " + "-" * 54)
+        lines.append(
+            f"  {'TOTAL':<12} {grand_calls:>6} {grand_prompt:>10,} "
+            f"{grand_comp:>10,} {grand_cost:>9.4f} ¥"
+        )
+        lines.append("=" * 56)
+
+        return "\n".join(lines)
+
+    @property
+    def total_calls(self) -> int:
+        """返回记录的总调用次数。"""
+        return len(self._records)
+
+
+# 全局成本追踪器实例
+cost_tracker = CostTracker()
 
 
 # ---------------------------------------------------------------------------
@@ -211,7 +345,7 @@ class OpenAICompatibleProvider(LLMProvider):
         choice = data["choices"][0]
         usage_raw = data.get("usage", {})
 
-        return LLMResponse(
+        response = LLMResponse(
             content=choice["message"]["content"],
             usage=Usage(
                 prompt_tokens=usage_raw.get("prompt_tokens", 0),
@@ -222,6 +356,9 @@ class OpenAICompatibleProvider(LLMProvider):
             provider=self._provider_name,
             finish_reason=choice.get("finish_reason", "stop"),
         )
+
+        cost_tracker.record(response.usage, self._provider_name)
+        return response
 
 
 # ---------------------------------------------------------------------------
@@ -394,27 +531,27 @@ def estimate_tokens(text: str) -> int:
 
 
 def calculate_cost(usage: Usage, provider_name: str) -> float:
-    """根据 Token 用量计算调用成本 (USD)。
+    """根据 Token 用量计算调用成本 (元/CNY)。
 
     Args:
         usage: 用量统计对象。
         provider_name: 提供商标识 (deepseek / qwen / openai)。
 
     Returns:
-        USD 成本，保留 6 位小数用于精确统计。
+        CNY 成本，保留 6 位小数用于精确统计。
 
     Raises:
         ValueError: 提供商不支持。
     """
     provider_name = provider_name.strip().lower()
 
-    if provider_name not in _PRICING:
-        valid = ", ".join(_PRICING)
+    if provider_name not in _PRICING_CNY:
+        valid = ", ".join(_PRICING_CNY)
         raise ValueError(
             f"不支持的提供商 '{provider_name}'，可选值: {valid}"
         )
 
-    pricing = _PRICING[provider_name]
+    pricing = _PRICING_CNY[provider_name]
     input_cost = (usage.prompt_tokens / 1_000_000) * pricing["input"]
     output_cost = (usage.completion_tokens / 1_000_000) * pricing["output"]
 
@@ -486,7 +623,14 @@ if __name__ == "__main__":
             total_tokens=1500,
         )
         cost = calculate_cost(demo_usage, provider_name)
-        print(f"  {provider_name}: {cost:.6f} USD (1k in / 500 out)")
+        print(f"  {provider_name}: {cost:.6f} 元 (1k in / 500 out)")
+
+    print("\n=== CostTracker 测试 ===")
+    tracker = CostTracker()
+    tracker.record(demo_usage, "deepseek")
+    tracker.record(demo_usage, "qwen")
+    tracker.record(demo_usage, "openai")
+    print(tracker.report())
 
     print("\n=== 快捷调用测试 ===")
     print("  quick_chat() 函数可用，需要设置环境变量后运行。")
