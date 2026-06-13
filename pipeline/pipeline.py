@@ -120,7 +120,9 @@ def _extract_repo_slug(url: str) -> str:
     """
     match = re.search(r"github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
     if match:
-        return f"{match.group(1)}-{match.group(2)}".lower()
+        owner = re.sub(r"[^\w-]", "-", match.group(1))
+        repo = re.sub(r"[^\w-]", "-", match.group(2))
+        return f"{owner}-{repo}".lower()
     return ""
 
 
