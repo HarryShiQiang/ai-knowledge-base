@@ -1,0 +1,129 @@
+# RSS Data Sources Configuration
+# ================================
+# Each source defines a feed for the knowledge base collector.
+# Fields:
+#   name      - Human-readable source name
+#   url       - RSS / Atom feed URL
+#   category  - Logical grouping for routing and filtering
+#   enabled   - Whether the collector fetches this source (false = skip)
+#
+# Large-volume feeds are disabled by default to avoid noise.
+# Enable them selectively when deeper coverage is needed.
+
+sources:
+  # ------------------------------------------------------------------
+  # 综合技术 / General Tech
+  # ------------------------------------------------------------------
+  - name: "Hacker News - AI/LLM/Agent"
+    url: "https://hnrss.org/frontpage?q=ai+OR+llm+OR+agent+OR+rag+OR+fine-tuning+OR+open-source+llm&points=5"
+    category: "general_tech"
+    enabled: true
+    notes: "hnrss.org filtered feed; points >= 5 to reduce noise"
+
+  - name: "Lobsters - AI/ML"
+    url: "https://lobste.rs/t/ai.rss"
+    category: "general_tech"
+    enabled: true
+    notes: "Lobsters AI/ML tag feed"
+
+  - name: "Hacker News - Best (unfiltered)"
+    url: "https://hnrss.org/best"
+    category: "general_tech"
+    enabled: false
+    notes: "Very high volume; disabled by default — enable only when running full pipeline"
+
+  # ------------------------------------------------------------------
+  # AI 研究 / AI Research
+  # ------------------------------------------------------------------
+  - name: "arXiv - cs.AI (new)"
+    url: "https://rss.arxiv.org/rss/cs.AI"
+    category: "ai_research"
+    enabled: true
+    notes: "arXiv new submissions in Artificial Intelligence"
+
+  - name: "arXiv - cs.CL (new)"
+    url: "https://rss.arxiv.org/rss/cs.CL"
+    category: "ai_research"
+    enabled: false
+    notes: "arXiv new submissions in Computation & Language; high volume"
+
+  - name: "arXiv - cs.LG (new)"
+    url: "https://rss.arxiv.org/rss/cs.LG"
+    category: "ai_research"
+    enabled: false
+    notes: "arXiv new submissions in Machine Learning; very high volume"
+
+  # ------------------------------------------------------------------
+  # 公司博客 / Company Blogs
+  # ------------------------------------------------------------------
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    category: "company_blog"
+    enabled: true
+    notes: "OpenAI official blog RSS"
+
+  - name: "Anthropic Research"
+    url: "https://www.anthropic.com/feed"
+    category: "company_blog"
+    enabled: true
+    notes: "Anthropic research blog Atom feed"
+
+  - name: "Google DeepMind Blog"
+    url: "https://blog.google/technology/ai/rss/"
+    category: "company_blog"
+    enabled: true
+    notes: "Google AI/DeepMind blog RSS"
+
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+    category: "company_blog"
+    enabled: true
+    notes: "Hugging Face official blog feed"
+
+  - name: "Meta AI Blog"
+    url: "https://ai.meta.com/blog/feed/"
+    category: "company_blog"
+    enabled: true
+    notes: "Meta AI research blog RSS"
+
+  - name: "Mistral AI Blog"
+    url: "https://mistral.ai/news/rss/"
+    category: "company_blog"
+    enabled: true
+    notes: "Mistral AI news feed"
+
+  # ------------------------------------------------------------------
+  # 中文社区 / Chinese Community
+  # ------------------------------------------------------------------
+  - name: "机器之心 (JiQiZhiXin)"
+    url: "https://www.jiqizhixin.com/rss"
+    category: "chinese_community"
+    enabled: false
+    notes: "中文 AI 媒体；默认关闭，需确认 RSS 可用性。备用: RSSHub /jiqizhixin"
+
+  - name: "量子位 (QbitAI)"
+    url: "https://www.qbitai.com/feed"
+    category: "chinese_community"
+    enabled: false
+    notes: "中文 AI 科技媒体；默认关闭，需确认 RSS 可用性。备用: RSSHub /qbitai"
+
+# ==================================================================
+# Category metadata (used by collector for routing & priority)
+# ==================================================================
+categories:
+  general_tech:
+    label: "综合技术"
+    priority: 2
+    description: "通用技术社区的高质量 AI 讨论与分享"
+  ai_research:
+    label: "AI 研究"
+    priority: 3
+    description: "学术论文与前沿研究成果"
+  company_blog:
+    label: "公司博客"
+    priority: 1
+    description: "AI 公司的官方技术博客与公告"
+  chinese_community:
+    label: "中文社区"
+    priority: 4
+    description: "中文 AI 媒体与社区内容"
