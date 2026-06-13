@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-langgenius-dify",
+  "title": "langgenius/dify",
+  "source_url": "https://github.com/langgenius/dify",
+  "source_type": "github_trending",
+  "summary": "Dify is an open-source platform for building and deploying agentic AI workflows, integrating LLMs, RAG, and tool orchestration.",
+  "tags": [
+    "agentic-framework",
+    "llm",
+    "rag",
+    "orchestration",
+    "open-source"
+  ],
+  "chinese_summary": "Dify 是一个开源平台，用于构建和部署智能体 AI 工作流，集成大语言模型、RAG 和工具编排。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

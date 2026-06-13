@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-langchain-ai-langchain",
+  "title": "langchain-ai/langchain",
+  "source_url": "https://github.com/langchain-ai/langchain",
+  "source_type": "github_trending",
+  "summary": "LangChain is a platform for building agent-based applications using LLMs, providing tools for chaining, memory, and integration.",
+  "tags": [
+    "agent",
+    "llm",
+    "agentic-framework",
+    "orchestration",
+    "tool-use"
+  ],
+  "chinese_summary": "LangChain是一个用于构建基于代理的LLM应用的平台，提供链式调用、记忆和集成工具。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

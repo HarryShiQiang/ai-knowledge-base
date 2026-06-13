@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-x1xhlol-system-prompts-and-models-of-ai-tools",
+  "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+  "source_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+  "source_type": "github_trending",
+  "summary": "A collection of system prompts, internal tools, and AI models from various AI coding assistants and platforms, including both proprietary and open-source examples.",
+  "tags": [
+    "prompt-engineering",
+    "open-source",
+    "agent",
+    "code-generation",
+    "tool-use"
+  ],
+  "chinese_summary": "收集了多种AI编码助手和平台的系统提示、内部工具和AI模型，包括专有和开源示例。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}

@@ -1,0 +1,22 @@
+{
+  "id": "20260613-gh-huggingface-transformers",
+  "title": "huggingface/transformers",
+  "source_url": "https://github.com/huggingface/transformers",
+  "source_type": "github_trending",
+  "summary": "A comprehensive framework providing thousands of pretrained models for NLP, vision, audio, and multimodal tasks, supporting both inference and training.",
+  "tags": [
+    "open-source",
+    "nlp",
+    "vision",
+    "multimodal",
+    "training",
+    "deployment"
+  ],
+  "chinese_summary": "一个综合性框架，提供数千个预训练模型，支持文本、视觉、音频和多模态任务的推理与训练。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 9.5
+}

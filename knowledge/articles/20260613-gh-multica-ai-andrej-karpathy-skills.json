@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-multica-ai-andrej-karpathy-skills",
+  "title": "multica-ai/andrej-karpathy-skills",
+  "source_url": "https://github.com/multica-ai/andrej-karpathy-skills",
+  "source_type": "github_trending",
+  "summary": "A single CLAUDE.md file that encodes Andrej Karpathy's insights on LLM coding pitfalls to improve Claude Code's behavior and output quality.",
+  "tags": [
+    "llm",
+    "code-generation",
+    "prompt-engineering",
+    "open-source"
+  ],
+  "chinese_summary": "一个单一的CLAUDE.md文件，编码了Andrej Karpathy关于LLM编码陷阱的见解，以改善Claude Code的行为和输出质量。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 6.5
+}

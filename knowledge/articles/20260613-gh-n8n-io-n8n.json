@@ -1,0 +1,22 @@
+{
+  "id": "20260613-gh-n8n-io-n8n",
+  "title": "n8n-io/n8n",
+  "source_url": "https://github.com/n8n-io/n8n",
+  "source_type": "github_trending",
+  "summary": "Fair-code workflow automation platform with native AI capabilities, visual building, custom code, self-host or cloud, and 400+ integrations.",
+  "tags": [
+    "agent",
+    "orchestration",
+    "open-source",
+    "deployment",
+    "chatbot",
+    "autonomous-agent"
+  ],
+  "chinese_summary": "公平代码工作流自动化平台，具备原生AI能力，支持可视化构建、自定义代码、自托管或云部署，集成400+服务。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-langflow-ai-langflow",
+  "title": "langflow-ai/langflow",
+  "source_url": "https://github.com/langflow-ai/langflow",
+  "source_type": "github_trending",
+  "summary": "A visual framework for building, testing, and deploying AI agents and workflows with a drag-and-drop interface.",
+  "tags": [
+    "agent",
+    "llm",
+    "agentic-framework",
+    "orchestration",
+    "deployment"
+  ],
+  "chinese_summary": "一个可视化框架，通过拖拽界面构建、测试和部署AI代理与工作流。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.0
+}

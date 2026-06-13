@@ -1,0 +1,21 @@
+{
+  "id": "20260613-gh-affaan-m-ecc",
+  "title": "affaan-m/ECC",
+  "source_url": "https://github.com/affaan-m/ECC",
+  "source_type": "github_trending",
+  "summary": "ECC is an agent harness performance optimization system enhancing skills, instincts, memory, security for Claude Code, Codex, and other coding agents.",
+  "tags": [
+    "agent",
+    "autonomous-agent",
+    "agentic-framework",
+    "open-source",
+    "deployment"
+  ],
+  "chinese_summary": "ECC是一个智能体性能优化系统，提升Claude Code、Codex等编码智能体的技能、直觉、记忆和安全性。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}

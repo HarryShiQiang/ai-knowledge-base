@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-nousresearch-hermes-agent",
+  "title": "NousResearch/hermes-agent",
+  "source_url": "https://github.com/NousResearch/hermes-agent",
+  "source_type": "github_trending",
+  "summary": "Hermes Agent is a modular, extensible AI agent framework from NousResearch designed to evolve with user needs.",
+  "tags": [
+    "agent",
+    "agentic-framework",
+    "open-source",
+    "autonomous-agent"
+  ],
+  "chinese_summary": "Hermes Agent 是 NousResearch 开发的模块化、可扩展的 AI 代理框架，旨在随用户需求增长而进化。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.0
+}

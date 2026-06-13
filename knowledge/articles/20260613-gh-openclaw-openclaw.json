@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-openclaw-openclaw",
+  "title": "openclaw/openclaw",
+  "source_url": "https://github.com/openclaw/openclaw",
+  "source_type": "github_trending",
+  "summary": "OpenClaw is a cross-platform personal AI assistant that runs on any OS and platform, offering a customizable, lobster-themed interface for AI interactions.",
+  "tags": [
+    "agent",
+    "open-source",
+    "deployment",
+    "chatbot"
+  ],
+  "chinese_summary": "OpenClaw 是一个跨平台的个人AI助手，可在任何操作系统和平台上运行，提供可定制的龙虾主题界面用于AI交互。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 6.5
+}

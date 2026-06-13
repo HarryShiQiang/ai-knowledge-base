@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-anomalyco-opencode",
+  "title": "anomalyco/opencode",
+  "source_url": "https://github.com/anomalyco/opencode",
+  "source_type": "github_trending",
+  "summary": "OpenCode is an open-source coding agent that automates software development tasks like code generation, debugging, and refactoring through natural language commands.",
+  "tags": [
+    "agent",
+    "code-generation",
+    "open-source",
+    "autonomous-agent"
+  ],
+  "chinese_summary": "OpenCode 是一个开源编码代理，通过自然语言命令自动化软件开发任务，如代码生成、调试和重构。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.5
+}

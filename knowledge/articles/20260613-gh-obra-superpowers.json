@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-obra-superpowers",
+  "title": "obra/superpowers",
+  "source_url": "https://github.com/obra/superpowers",
+  "source_type": "github_trending",
+  "summary": "A framework and methodology for building agentic skills and software development, focusing on practical, working solutions.",
+  "tags": [
+    "agentic-framework",
+    "agent",
+    "orchestration",
+    "deployment"
+  ],
+  "chinese_summary": "一个用于构建代理技能和软件开发的框架与方法论，专注于实用且有效的解决方案。",
+  "difficulty": "medium",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 7.5
+}

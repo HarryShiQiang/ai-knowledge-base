@@ -1,0 +1,370 @@
+{
+  "source": "pipeline_step2",
+  "analyzed_at": "2026-06-13T06:04:29Z",
+  "count": 24,
+  "items": [
+    {
+      "title": "openclaw/openclaw",
+      "source_url": "https://github.com/openclaw/openclaw",
+      "source_type": "github_trending",
+      "summary": "OpenClaw is a cross-platform personal AI assistant that runs on any OS and platform, offering a customizable, lobster-themed user experience.",
+      "chinese_summary": "OpenClaw 是一个跨平台的个人AI助手，可在任何操作系统和平台上运行，提供可定制的、以龙虾为主题的用户体验。",
+      "tags": [
+        "agent",
+        "open-source",
+        "deployment",
+        "chatbot"
+      ],
+      "difficulty": "beginner",
+      "score": 6.0
+    },
+    {
+      "title": "obra/superpowers",
+      "source_url": "https://github.com/obra/superpowers",
+      "source_type": "github_trending",
+      "summary": "Superpowers is an agentic skills framework and software development methodology designed to enhance productivity and collaboration in AI-driven development.",
+      "chinese_summary": "Superpowers 是一个代理技能框架和软件开发方法论，旨在提升AI驱动开发中的生产力和协作效率。",
+      "tags": [
+        "agentic-framework",
+        "agent",
+        "llm",
+        "deployment",
+        "orchestration"
+      ],
+      "difficulty": "medium",
+      "score": 7.5
+    },
+    {
+      "title": "affaan-m/ECC",
+      "source_url": "https://github.com/affaan-m/ECC",
+      "source_type": "github_trending",
+      "summary": "A performance optimization system for AI coding agents, enhancing skills, instincts, memory, and security across multiple platforms like Claude Code and Cursor.",
+      "chinese_summary": "一个针对AI编码代理的性能优化系统，增强技能、直觉、记忆和安全性，支持Claude Code、Cursor等多个平台。",
+      "tags": [
+        "agent",
+        "autonomous-agent",
+        "code-generation",
+        "deployment",
+        "open-source"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "ultraworkers/claw-code",
+      "source_url": "https://github.com/ultraworkers/claw-code",
+      "source_type": "github_trending",
+      "summary": "An autonomous agent-managed museum exhibit built in Rust, using Gajae-Code/LazyCodex, developed and maintained without human intervention.",
+      "chinese_summary": "一个由自主代理管理的博物馆展品，使用Rust和Gajae-Code/LazyCodex构建，完全无需人工干预开发和维护。",
+      "tags": [
+        "autonomous-agent",
+        "agentic-framework",
+        "open-source",
+        "code-generation",
+        "rust"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "n8n-io/n8n",
+      "source_url": "https://github.com/n8n-io/n8n",
+      "source_type": "github_trending",
+      "summary": "Fair-code workflow automation platform with native AI capabilities, visual building, custom code, self-host or cloud, 400+ integrations.",
+      "chinese_summary": "公平代码工作流自动化平台，具备原生AI能力，支持可视化构建、自定义代码、自托管或云端部署，集成400多个服务。",
+      "tags": [
+        "agent",
+        "llm",
+        "open-source",
+        "orchestration",
+        "deployment"
+      ],
+      "difficulty": "medium",
+      "score": 8.5
+    },
+    {
+      "title": "NousResearch/hermes-agent",
+      "source_url": "https://github.com/NousResearch/hermes-agent",
+      "source_type": "github_trending",
+      "summary": "A modular, extensible AI agent framework designed to evolve alongside user needs, supporting dynamic tool integration and adaptive behavior.",
+      "chinese_summary": "一个模块化、可扩展的AI代理框架，旨在随用户需求演变，支持动态工具集成和自适应行为。",
+      "tags": [
+        "agent",
+        "agentic-framework",
+        "open-source",
+        "tool-use",
+        "autonomous-agent"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "Significant-Gravitas/AutoGPT",
+      "source_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "source_type": "github_trending",
+      "summary": "AutoGPT provides accessible AI tools for everyone to use and build upon, enabling autonomous agents.",
+      "chinese_summary": "AutoGPT 提供人人可用的 AI 工具，支持自主智能体的构建与使用。",
+      "tags": [
+        "agent",
+        "autonomous-agent",
+        "open-source",
+        "agentic-framework"
+      ],
+      "difficulty": "medium",
+      "score": 8.0
+    },
+    {
+      "title": "multica-ai/andrej-karpathy-skills",
+      "source_url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "source_type": "github_trending",
+      "summary": "A single CLAUDE.md file that encodes Andrej Karpathy's insights on LLM coding pitfalls to improve Claude Code's behavior and output quality.",
+      "chinese_summary": "一个单一的CLAUDE.md文件，基于安德烈·卡帕西对LLM编码陷阱的观察，优化Claude Code的行为和输出质量。",
+      "tags": [
+        "llm",
+        "code-generation",
+        "prompt-engineering",
+        "open-source"
+      ],
+      "difficulty": "beginner",
+      "score": 6.5
+    },
+    {
+      "title": "ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama",
+      "source_type": "github_trending",
+      "summary": "Ollama enables local execution of LLMs like Kimi, DeepSeek, Qwen, Gemma with a simple CLI, making AI accessible offline.",
+      "chinese_summary": "Ollama 支持本地运行 Kimi、DeepSeek、Qwen、Gemma 等大模型，通过简单命令行实现离线 AI 部署。",
+      "tags": [
+        "open-source",
+        "llm",
+        "deployment",
+        "tool-use"
+      ],
+      "difficulty": "beginner",
+      "score": 8.5
+    },
+    {
+      "title": "anomalyco/opencode",
+      "source_url": "https://github.com/anomalyco/opencode",
+      "source_type": "github_trending",
+      "summary": "OpenCode is an open-source coding agent that automates code generation and software development tasks.",
+      "chinese_summary": "OpenCode 是一个开源编码代理，用于自动化代码生成和软件开发任务。",
+      "tags": [
+        "code-generation",
+        "agent",
+        "open-source"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "AUTOMATIC1111/stable-diffusion-webui",
+      "source_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "source_type": "github_trending",
+      "summary": "A browser-based interface for Stable Diffusion, enabling image generation from text prompts with extensive customization and extensions.",
+      "chinese_summary": "一个基于浏览器的Stable Diffusion界面，支持通过文本提示生成图像，并提供丰富的自定义选项和扩展功能。",
+      "tags": [
+        "vision",
+        "open-source",
+        "deployment"
+      ],
+      "difficulty": "beginner",
+      "score": 8.5
+    },
+    {
+      "title": "f/prompts.chat",
+      "source_url": "https://github.com/f/prompts.chat",
+      "source_type": "github_trending",
+      "summary": "A community-driven repository for sharing, discovering, and collecting ChatGPT prompts, with self-hosting options for privacy.",
+      "chinese_summary": "一个社区驱动的ChatGPT提示词分享、发现和收集仓库，支持自托管以保护隐私。",
+      "tags": [
+        "prompt-engineering",
+        "open-source",
+        "chatbot"
+      ],
+      "difficulty": "beginner",
+      "score": 6.5
+    },
+    {
+      "title": "huggingface/transformers",
+      "source_url": "https://github.com/huggingface/transformers",
+      "source_type": "github_trending",
+      "summary": "A comprehensive framework providing thousands of pretrained models for NLP, vision, audio, and multimodal tasks, supporting both inference and training.",
+      "chinese_summary": "一个全面的框架，提供数千个预训练模型，支持自然语言处理、视觉、音频和多模态任务的推理与训练。",
+      "tags": [
+        "open-source",
+        "multimodal",
+        "nlp",
+        "vision",
+        "training",
+        "deployment"
+      ],
+      "difficulty": "medium",
+      "score": 9.5
+    },
+    {
+      "title": "Snailclimb/JavaGuide",
+      "source_url": "https://github.com/Snailclimb/JavaGuide",
+      "source_type": "github_trending",
+      "summary": "A comprehensive Java interview and backend development guide covering computer fundamentals, databases, distributed systems, high concurrency, system design, and AI application development.",
+      "chinese_summary": "一份全面的 Java 面试与后端开发指南，涵盖计算机基础、数据库、分布式、高并发、系统设计及 AI 应用开发。",
+      "tags": [
+        "open-source",
+        "nlp",
+        "code-generation"
+      ],
+      "difficulty": "beginner",
+      "score": 7.5
+    },
+    {
+      "title": "anthropics/skills",
+      "source_url": "https://github.com/anthropics/skills",
+      "source_type": "github_trending",
+      "summary": "Anthropic's public repository for agent skills, providing reusable components and patterns for building AI agents.",
+      "chinese_summary": "Anthropic的公开代理技能库，提供可复用的组件和模式，用于构建AI代理。",
+      "tags": [
+        "agent",
+        "autonomous-agent",
+        "agentic-framework",
+        "open-source"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "langflow-ai/langflow",
+      "source_url": "https://github.com/langflow-ai/langflow",
+      "source_type": "github_trending",
+      "summary": "Langflow is a visual framework for building, testing, and deploying AI agents and workflows with a drag-and-drop interface.",
+      "chinese_summary": "Langflow 是一个可视化框架，通过拖拽界面构建、测试和部署 AI 代理与工作流。",
+      "tags": [
+        "agentic-framework",
+        "agent",
+        "orchestration",
+        "open-source",
+        "deployment"
+      ],
+      "difficulty": "medium",
+      "score": 8.0
+    },
+    {
+      "title": "langgenius/dify",
+      "source_url": "https://github.com/langgenius/dify",
+      "source_type": "github_trending",
+      "summary": "Dify is an open-source platform for building and deploying agentic AI workflows, combining LLM orchestration, RAG, and tool integration.",
+      "chinese_summary": "Dify 是一个开源平台，用于构建和部署智能体 AI 工作流，集成了 LLM 编排、RAG 和工具集成。",
+      "tags": [
+        "agent",
+        "llm",
+        "rag",
+        "open-source",
+        "orchestration",
+        "agentic-framework"
+      ],
+      "difficulty": "medium",
+      "score": 8.5
+    },
+    {
+      "title": "open-webui/open-webui",
+      "source_url": "https://github.com/open-webui/open-webui",
+      "source_type": "github_trending",
+      "summary": "A user-friendly web interface for interacting with AI models, supporting Ollama and OpenAI APIs.",
+      "chinese_summary": "一个用户友好的AI交互界面，支持Ollama和OpenAI API。",
+      "tags": [
+        "open-source",
+        "llm",
+        "deployment",
+        "chatbot"
+      ],
+      "difficulty": "beginner",
+      "score": 8.0
+    },
+    {
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source_type": "github_trending",
+      "summary": "A collection of system prompts, internal tools, and AI models from popular AI coding assistants and platforms, including both proprietary and open-source examples.",
+      "chinese_summary": "收集了流行AI编程助手和平台的系统提示词、内部工具及AI模型，涵盖专有和开源示例。",
+      "tags": [
+        "prompt-engineering",
+        "open-source",
+        "code-generation",
+        "agentic-framework",
+        "tool-use"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "langchain-ai/langchain",
+      "source_url": "https://github.com/langchain-ai/langchain",
+      "source_type": "github_trending",
+      "summary": "LangChain is a platform for building agent-based applications with LLMs, providing tools for chaining, memory, and integration.",
+      "chinese_summary": "LangChain 是一个用于构建基于代理的LLM应用程序的平台，提供链式调用、记忆和集成工具。",
+      "tags": [
+        "agent",
+        "llm",
+        "agentic-framework",
+        "orchestration",
+        "open-source"
+      ],
+      "difficulty": "medium",
+      "score": 8.5
+    },
+    {
+      "title": "To Gen or Not To Gen: The Ethical Use of Generative AI",
+      "source_url": "https://blog.johanneslink.net/2025/11/04/to-gen-or-not-to-gen/",
+      "source_type": "rss",
+      "summary": "Explores the ethical considerations and decision-making framework for using generative AI responsibly in software development and beyond.",
+      "chinese_summary": "探讨在软件开发及其他领域中负责任地使用生成式AI的伦理考量与决策框架。",
+      "tags": [
+        "llm",
+        "ethics",
+        "prompt-engineering"
+      ],
+      "difficulty": "beginner",
+      "score": 7.0
+    },
+    {
+      "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
+      "source_type": "rss",
+      "summary": "Google announces community investments in Virginia to create local jobs and improve energy affordability through infrastructure and workforce development.",
+      "chinese_summary": "谷歌宣布在弗吉尼亚州进行社区投资，以创造本地就业机会并通过基础设施和劳动力发展提高能源可负担性。",
+      "tags": [
+        "deployment",
+        "open-source"
+      ],
+      "difficulty": "beginner",
+      "score": 5.5
+    },
+    {
+      "title": "The latest AI news we announced in May 2026",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+      "source_type": "rss",
+      "summary": "Google's May 2026 AI updates include new models, tools, and features across its product ecosystem, highlighting advancements in multimodal AI and developer capabilities.",
+      "chinese_summary": "谷歌2026年5月AI更新包括新模型、工具和功能，涵盖多模态AI和开发者能力提升。",
+      "tags": [
+        "multimodal",
+        "llm",
+        "open-source",
+        "deployment"
+      ],
+      "difficulty": "medium",
+      "score": 7.0
+    },
+    {
+      "title": "5 ways Google Search can level up your thrift and vintage shopping",
+      "source_url": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
+      "source_type": "rss",
+      "summary": "Google Search introduces AI tools to enhance thrift and vintage shopping, helping users find second-hand treasures more efficiently.",
+      "chinese_summary": "谷歌搜索推出AI工具，提升二手和复古购物体验，帮助用户更高效地发现二手宝藏。",
+      "tags": [
+        "search",
+        "multimodal"
+      ],
+      "difficulty": "beginner",
+      "score": 6.5
+    }
+  ]
+}

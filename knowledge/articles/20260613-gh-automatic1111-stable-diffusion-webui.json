@@ -1,0 +1,19 @@
+{
+  "id": "20260613-gh-automatic1111-stable-diffusion-webui",
+  "title": "AUTOMATIC1111/stable-diffusion-webui",
+  "source_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+  "source_type": "github_trending",
+  "summary": "A browser-based interface for Stable Diffusion, enabling image generation from text prompts with extensive customization and extensions.",
+  "tags": [
+    "vision",
+    "open-source",
+    "deployment"
+  ],
+  "chinese_summary": "一个基于浏览器的Stable Diffusion界面，支持通过文本提示生成图像，并提供丰富的自定义选项和扩展功能。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.5
+}

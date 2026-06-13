@@ -1,0 +1,20 @@
+{
+  "id": "20260613-gh-open-webui-open-webui",
+  "title": "open-webui/open-webui",
+  "source_url": "https://github.com/open-webui/open-webui",
+  "source_type": "github_trending",
+  "summary": "A user-friendly web interface for AI models, supporting Ollama and OpenAI APIs, enabling easy interaction with LLMs.",
+  "tags": [
+    "llm",
+    "open-source",
+    "deployment",
+    "chatbot"
+  ],
+  "chinese_summary": "一个用户友好的AI网页界面，支持Ollama和OpenAI API，方便与大型语言模型交互。",
+  "difficulty": "beginner",
+  "published_at": "2026-06-13T06:05:34Z",
+  "fetched_at": "2026-06-13T06:05:34Z",
+  "status": "published",
+  "distributed_to": [],
+  "score": 8.0
+}
